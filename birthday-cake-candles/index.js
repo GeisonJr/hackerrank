@@ -1,16 +1,14 @@
-// Birthday Cake Candles - birthday-cake-candles
-
 function birthdayCakeCandles(candles) {
-	let arr = []
-
-	candles.map((value) => {
-		if (!arr[value]) {
-			arr[value] = 0
+	let res = 0
+	let max = candles[0]
+	for (let i = 0; i < candles.length; i++) {
+		if (max < candles[i]) {
+			max = candles[i]
+			res = 0
 		}
-		arr[value]++
-	})
 
-	return arr[arr.length - 1]
+		if (max === candles[i])
+			res++
+	}
+	return res
 }
-
-console.log(birthdayCakeCandles([4, 4, 1, 3]))

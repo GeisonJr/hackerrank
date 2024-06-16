@@ -1,13 +1,6 @@
-// Simple array Sum - simple-array-sum
-
 function simpleArraySum(ar) {
-	let sum = 0
-
-	ar.map((value) => {
-		sum += value
-	})
-
-	return sum
+	let res = 0
+	for (let i = 0; i < ar.length; i++)
+		res += ar[i]
+	return res
 }
-
-console.log(simpleArraySum([1, 2, 3, 4, 10, 11]))

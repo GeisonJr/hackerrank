@@ -1,19 +1,11 @@
-// Staircase - staircase
-
 function staircase(n) {
-	let string = ''
-
-	for (let index = n; index > 0; index--) {
-		for (let i = 1; i <= n; i++) {
-			if (i < index) {
-				string += ' '
-			} else {
-				string += '#'
-			}
+	for (let i = 0; i < n; i++) {
+		for (let j = 0; j < n; j++) {
+			if (j < n - 1 - i)
+				process.stdout.write(' ')
+			else
+				process.stdout.write('#')
 		}
-		console.log(string)
-		string = ''
+		process.stdout.write('\n')
 	}
 }
-
-staircase(6)

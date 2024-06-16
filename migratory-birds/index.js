@@ -1,23 +1,13 @@
-// Migratory Birds - migratory-birds
-
 function migratoryBirds(arr) {
-	const counter = [0, 0, 0, 0, 0, 0]
-	let temp = counter[0]
-	let most_sighted
-
-	arr.map((value) => {
-		counter[value]++
-	})
-
-	counter.map((value, index) => {
-		if (temp < value) {
-			temp = value
-			most_sighted = index
+	let aux = [0, 0, 0, 0, 0]
+	let res = 0
+	let count = 0
+	for (let i = 0; i < arr.length; i++)
+		aux[arr[i] - 1]++
+	for (let i = 0; i < aux.length; i++)
+		if (count < aux[i]) {
+			count = aux[i]
+			res = i + 1
 		}
-	})
-	return most_sighted
+	return res
 }
-
-console.log(migratoryBirds([1, 4, 4, 4, 5, 3]))
-console.log('-----------------------------------------------------------------')
-console.log(migratoryBirds([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]))

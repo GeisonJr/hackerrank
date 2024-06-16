@@ -1,20 +1,10 @@
-// Compare the Triplets - compare-the-triplets
-
 function compareTriplets(a, b) {
-	let alice_score = 0
-	let bob_score = 0
-
-	for (let index = 0; index < a.length; index++) {
-		if (a[index] > b[index]) {
-			alice_score++
-		} else if (a[index] < b[index]) {
-			bob_score++
-		}
+	let res = [0, 0]
+	for (let i = 0; i < a.length; i++) {
+		if (a[i] > b[i])
+			res[0] += 1
+		else if (b[i] > a[i])
+			res[1] += 1
 	}
-
-	return [alice_score, bob_score]
+	return res
 }
-
-console.log(compareTriplets([1, 2, 3], [3, 2, 1]))
-console.log('-----------------------------------------------------------------')
-console.log(compareTriplets([17, 28, 30], [99, 16, 8]))

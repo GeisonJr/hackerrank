@@ -1,29 +1,13 @@
-// Plus Minus - plus-minus
-
 function plusMinus(arr) {
-	const obj = {
-		positive: 0,
-		negative: 0,
-		zero: 0
+	let res = [0, 0, 0]
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] > 0)
+			res[0]++
+		else if (arr[i] < 0)
+			res[1]++
+		else
+			res[2]++
 	}
-
-	arr.map((value) => {
-		if (value > 0) {
-			obj.positive++
-		} else if (value < 0) {
-			obj.negative++
-		} else {
-			obj.zero++
-		}
-	})
-
-	Object.keys(obj).map((key) => {
-		obj[key] = obj[key] / arr.length
-	})
-
-	console.log(obj.positive)
-	console.log(obj.negative)
-	console.log(obj.zero)
+	for (let i = 0; i < res.length; i++)
+		process.stdout.write((res[i] / arr.length).toFixed(6) + '\n')
 }
-
-plusMinus([-4, 3, -9, 0, 4, 1])
